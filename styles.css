@@ -38,10 +38,20 @@ main {
 .slideInLeftCard {
   background-color: var(--cardFromLeft);
   color: whitesmoke;
+  animation-name: slideInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 3;
+  animation-fill-mode:forwards;
 }
 
 .slideInRightCard {
   background-color: var(--cardFromRight);
+  animation-name: slideInRight;
+  animation-duration: 1s;
+  animation-timing-function:ease-in ;
+  animation-iteration-count: 3;
+  animation-fill-mode: forwards;
 }
 
 .rotateCard {
@@ -49,6 +59,9 @@ main {
   width: 100px;
   height: 100px;
   background-color: var(--rotate);
+  animation-name: rotate;
+  animation-duration: 3s;
+  animation-timing-function:ease-in-out ;
 }
 
 .hoverBtnContainer {
@@ -64,4 +77,56 @@ main {
   border-color: lightgrey;
   border-style: solid;
   box-shadow: 2px 2px 5px lightgrey;
+  transition: 700ms;
+  transition-timing-function: ease-in-out;
+}
+
+.btnSize:hover{
+  scale: 3;
+}
+
+.btnColor:hover{
+  background-color: cyan;
+}
+
+.btnOpacity {
+  opacity:0.3;
+}
+
+.btnOpacity:hover {
+  opacity: 1;
+}
+@keyframes slideInLeft{
+  from{
+    transform: translateX(-300px);
+  }
+  to{
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform:translateX(300px) ;
+  }
+  to {
+    transition:translatex(0px);
+  }
+}
+@keyframes rotate{
+  0%{
+
+  }
+  50%{
+    scale: 2;
+    transform: rotate(0);
+    border-radius: 0;
+    background-color: aqua;
+  }
+  100%{
+    border-radius: 100%;
+    transform: rotate(360deg);
+    scale: 2;
+    background-color: aqua;
+  }
 }
